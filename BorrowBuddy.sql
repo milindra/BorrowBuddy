@@ -23,10 +23,15 @@ DROP TABLE IF EXISTS `loan_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `loan_info` (
+  `loan_no` int(11) NOT NULL AUTO_INCREMENT,
   `amount` float NOT NULL,
   `value` int(11) NOT NULL,
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id` int(11) NOT NULL,
+  `paid` bit(1) NOT NULL DEFAULT b'0',
+  `paid_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`loan_no`),
+  UNIQUE KEY `loan_no` (`loan_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,8 +40,32 @@ CREATE TABLE `loan_info` (
 
 LOCK TABLES `loan_info` WRITE;
 /*!40000 ALTER TABLE `loan_info` DISABLE KEYS */;
-INSERT INTO `loan_info` VALUES (145,3,3),(43,5,2),(53,1,3),(565,3,1);
+INSERT INTO `loan_info` VALUES (1,145,3,3,'\0',NULL),(2,43,5,2,'\0',NULL),(3,53,1,3,'',2),(4,565,3,1,'\0',NULL);
 /*!40000 ALTER TABLE `loan_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `loan_info_extended`
+--
+
+DROP TABLE IF EXISTS `loan_info_extended`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `loan_info_extended` (
+  `loan_id` int(11) NOT NULL,
+  `interest_rate` double NOT NULL,
+  `pay_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loan_info_extended`
+--
+
+LOCK TABLES `loan_info_extended` WRITE;
+/*!40000 ALTER TABLE `loan_info_extended` DISABLE KEYS */;
+INSERT INTO `loan_info_extended` VALUES (1,3.2,4),(1,2,1),(2,3,3),(2,4,1);
+/*!40000 ALTER TABLE `loan_info_extended` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -78,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-02 18:57:45
+-- Dump completed on 2017-02-04 11:16:27
