@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav class="navabar navabar-default">
+    <div class="">
+        
+    </div>
+</nav>
+</body>
+</html>
+
+<?php
+    session_start();
+    
+    //connect to database
+    require "database_connect.php";
+    
+    $email=$_SESSION["email"];
+    //echo "".$email;
+    $queryForName="select * from main where email='$email';";
+    $qry_name=mysql_query($queryForName) or die(mysql_error());
+    $data_name=mysql_fetch_assoc($qry_name);
+    echo "".$data_name['name']; 
+    // Escape User Input to help prevent SQL Injection
+    $email = mysql_real_escape_string($email);
+
+    $query="select * from loan_info where paid=0 order by value desc;";
+    //echo $query;
+    $qry_result = mysql_query($query) or die(mysql_error());
+
+    echo "<table border='4' type='solid'>";
+    while($data=mysql_fetch_assoc($qry_result))
+    {
+        echo "<br>";
+        
+        //fetch name from main table
+        $tempId=$data["id"];        
+        $queryForName="select * from main where id='$tempId';";
+        $qry_name=mysql_query($queryForName) or die(mysql_error());     
+        $data_name=mysql_fetch_assoc($qry_name);
+        
+        //display name id amount
+        //echo "<tr>";
+        //echo "<td><a href=''>".$data_name["name"]."</a></td><td>".$data["amount"]."</td>";
+        //echo "</tr>";
+        $name=$data_name["name"];
+        $amount=$data["amount"];
+        $id=$data_name["id"];
+        $loanNo=$data["loan_no"];
+
+        echo "<script>addInfo('$name',$amount,$id,$loanNo);</script>";
+    }
+
+
+?>

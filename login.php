@@ -6,7 +6,7 @@
  if(isset($_SESSION["email"]) && isset($_SESSION["pass"]))
  {
  	echo "move";
- 	header("location: welcome.php");
+ 	header("location: welcom2.php");
  }
  else
  {

@@ -43,7 +43,7 @@
       // Insert a new row in the table for each person returned
    if($row = mysql_fetch_array($qry_result)) {
       echo "correct";
-      header("location: welcome.php");
+      header("location: welcom2.php");
    }
    else
    {
