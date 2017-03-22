@@ -1,8 +1,8 @@
 <?php
    $dbhost = "localhost";
    $dbuser = "root";
-   $dbpass = "mpsk22";
-   $dbname = "loan_app";
+   $dbpass = "nith";
+   $dbname = "borrowbuddy";
    
    //Connect to MySQL Server
    if(mysql_connect($dbhost, $dbuser, $dbpass))

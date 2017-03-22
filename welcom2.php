@@ -30,11 +30,64 @@
             border-radius: 5px;
 
         }
+table {
+    border-collapse: collapse;
+    width: 100%;
+	
+	margin-top: 0px;
+}
+
+th{
+font-family: "Comic Sans MS";
+background-color: #666666;
+margin-top: 50px;
+ font-style: bold;
+
+border-radius: 100px;
+font-size: 27px;
+
+}
+
+ td {
+ font-family: "Consolas";
+    padding: 10px;	
+    text-align: center;
+    border-bottom: 4px solid #ddd;
+}
+
+tr:hover{background-color:#f5f5f5}
+
+.e a:link, a:visited {
+    background-color: #999999;
+    color: black;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	border-radius: 15px;
+	margin-left:50px;
+	margin-top:20px;
+}
+
+
+.e a:hover, a:active {
+    background-color: #666666;
+}
     </style>
 
 </head>
 
 <body>
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="welcom2.php">BorrowBuddy</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
 
     <div id="wrapper">
 
@@ -43,12 +96,14 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        Borrow Buddy
                     </a>
                 </li>
                 <li>
-                    <a href="profile.php">
-                     <img src="abc.gif" class="img-circle img-responsive">
+
+                    <a href="profile.php" style"padding:15">
+		
+			<img src="get.php" class="img-circle img-responsive" width=200 height=200>'
                     <?php
                         session_start();
                          
@@ -59,22 +114,7 @@
                    </a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="loan.php">Want money then click here</a>
                 </li>
             </ul>
         </div>
@@ -84,26 +124,14 @@
       
         <div id="page-content-wrapper">
             <div class="container-fluid" id="loan_info">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                    <button onclick="addInfo('milindra',123)">Try it</button>
-                    </div>
-                </div>
-                <div class="row back">
-                    <div class="col-lg-12">
-                    sdfsdf
-                    </div>
-                </div>
-                <div class="row back">
-                    <div class="col-lg-12">
-                    sdfsdf
-                    </div>
-                </div>
+              <!--      <tr class="row">
+			    <td class="col-lg-12">Lois</td>
+			    <td>12</td>
+			    <td><p class= "e"><a href ="www.google.com">More</a><a href= " ">Add
+			      
+			      </a><a href= "k">Profile</a></p></td>
+			  </tr>
+                -->   
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -127,7 +155,9 @@
   
      <script>
             function addInfo(name,amount,id,loanNo) {
-                document.getElementById('loan_info').innerHTML+='<div class="row" onclick="pay('+loanNo+')"><div class="col-lg-12 back"><a href="#">'+name+'</a>   '+amount+'</div></div>';
+         
+		
+		document.getElementById('loan_info').innerHTML+='<tr><td>name: '+name+'</td><td>&nbsp;&nbsp;&nbsp;&nbsp;amount: '+amount+'</td><td>&nbsp;&nbsp;&nbsp;&nbsp;loan Id: '+id+' <p class= "e"><a href ="more.php?id='+id+'">More</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href= "add.php?id='+loanNo+'" >Add&nbsp;&nbsp;&nbsp;&nbsp;</a></td></tr>';
             }
             function pay(loanNo)
             {

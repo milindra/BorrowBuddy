@@ -44,10 +44,11 @@
         // echo "hjgvsjd";
      $query = "insert into main values('$name','$email','$pass','$address',0,'')";
      echo "$query";
-   if(mysql_query($query))
-   {
-      echo "successfully entered";
-   }
+	   if(mysql_query($query))
+	   {
+	      echo "successfully entered";
+	   }
+   	
 }
 else
 {

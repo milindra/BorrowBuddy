@@ -48,6 +48,8 @@
    else
    {
       echo "incorrect";
+      header("location: login.php?log=1
+");
    }
    
 ?>
