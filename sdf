@@ -1,0 +1,60 @@
+[33mcommit d3264c2dd2ed3ca9d632998e0961d9869cf5482d[m
+Author: milindra <milindrakanwar@gmail.com>
+Date:   Wed Mar 22 19:10:47 2017 +0530
+
+    all new changes
+
+[33mcommit b0ea21a1a3d2a497d1e5d5ca76fa04ad6e806bed[m
+Author: milindra <milindrakanwar@gmail.com>
+Date:   Sat Feb 4 11:18:08 2017 +0530
+
+    database Updated
+
+[33mcommit b90f654f4525ff1db81fa61be9e9cee6af38f288[m
+Merge: 711b813 ce15ab5
+Author: milindra <milindrakanwar@gmail.com>
+Date:   Sat Feb 4 11:11:44 2017 +0530
+
+    Merge branch 'master' of https://github.com/milindra/BorrowBuddy
+
+[33mcommit 711b8135738c9ea8743058cfc7753e1ef4ddd117[m
+Author: milindra <milindrakanwar@gmail.com>
+Date:   Sat Feb 4 11:08:29 2017 +0530
+
+    big changes
+
+[33mcommit ce15ab5b5499a464058c6666bf3be4416b95d8d8[m
+Merge: 67505fe 8e378ed
+Author: milindra <milindrakanwar@gmail.com>
+Date:   Thu Feb 2 22:25:06 2017 +0530
+
+    Merge pull request #1 from srnit/patch-1
+    
+    updated code for register_info.php
+
+[33mcommit 8e378ed5fc16b8fd3c908326881ad6bbf364a4e5[m
+Author: sudhanshu raman <ramansudhanshu150@gmail.com>
+Date:   Thu Feb 2 22:19:35 2017 +0530
+
+    updated code for register_info.php
+    
+    in the previous code of register_info.php there is bug (if user hit simply submit button without entering any thing then yhe privious code also able to work)
+    so in this code i remove those bugs.
+
+[33mcommit 67505fe960765472a736c600e816152740df2e74[m
+Author: milindra <milindrakanwar@gmail.com>
+Date:   Thu Feb 2 19:00:09 2017 +0530
+
+    DataBase Enter
+
+[33mcommit 5b029369d57b3e143a128cd5ca0f59fae73dba01[m
+Author: milindra <milindrakanwar@gmail.com>
+Date:   Thu Feb 2 18:45:54 2017 +0530
+
+    initilize-project
+
+[33mcommit d8f11322cb4ba494fbcd5e6467a6d572098aa7f0[m
+Author: milindra <milindrakanwar@gmail.com>
+Date:   Thu Feb 2 18:30:54 2017 +0530
+
+    Initial commit
