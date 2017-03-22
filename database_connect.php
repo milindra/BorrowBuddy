@@ -1,7 +1,7 @@
 <?php
    $dbhost = "localhost";
    $dbuser = "root";
-   $dbpass = "nith";
+   $dbpass = "password";
    $dbname = "borrowbuddy";
    
    //Connect to MySQL Server
